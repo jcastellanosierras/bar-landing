@@ -1,0 +1,101 @@
+---
+import Header from '@/components/Header.astro'
+import Footer from '@/components/Footer.astro'
+import ViewTransitions from 'astro/components/ViewTransitions.astro'
+import { colors } from '@/utils/colors'
+import '@fontsource-variable/montserrat'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+const { primary, primaryDarker, background, foreground } = colors
+---
+
+<!doctype html>
+<html lang='es'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Astro description' />
+    <meta name='viewport' content='width=device-width' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+    <ViewTransitions />
+  </head>
+  <body class="h-screen flex flex-col overflow-x-hidden">
+    <Header />
+    <div class="flex-1" id="content">
+      <slot />
+    </div>
+    <Footer />
+  </body>
+</html>
+<style define:vars={{ primary, primaryDarker, background, foreground }} is:global>
+  :root {
+    --primary: var(--primary);
+    --primary-darker: var(--primaryDarker);
+    --background: var(--background);
+    --foreground: var(--foreground);
+    --accent: 136, 58, 234;
+    --accent-light: 224, 204, 250;
+    --accent-dark: 49, 10, 101;
+    --accent-gradient: linear-gradient(
+      45deg,
+      rgb(var(--accent)),
+      rgb(var(--accent-light)) 30%,
+      white 60%
+    );
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-family: 'Montserrat Variable', system-ui, sans-serif;
+    background: #ebebeb;
+  }
+  
+  code {
+    font-family:
+      Menlo,
+      Monaco,
+      Lucida Console,
+      Liberation Mono,
+      DejaVu Sans Mono,
+      Bitstream Vera Sans Mono,
+      Courier New,
+      monospace;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: 'Playfair Display', serif;
+    color: var(--primary);
+    text-align: center;
+  }
+
+  h1 {
+    font-size: 3.75rem;
+    font-weight: 700;
+    line-height: 4rem;
+  }
+
+  h2 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+
+  main {
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+  }
+</style>

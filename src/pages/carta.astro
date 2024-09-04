@@ -1,0 +1,368 @@
+---
+import Dish from '@/components/Dish.astro'
+import Layout from '@/layouts/Layout.astro'
+
+const alergenos = [
+  { nombre: 'Gluten', icono: '🌾' },
+  { nombre: 'Crustáceos', icono: '🦐' },
+  { nombre: 'Huevos', icono: '🥚' },
+  { nombre: 'Pescado', icono: '🐟' },
+  { nombre: 'Cacahuetes', icono: '🥜' },
+  { nombre: 'Soja', icono: '🫘' },
+  { nombre: 'Lácteos', icono: '🥛' },
+  { nombre: 'Frutos secos', icono: '🌰' },
+  { nombre: 'Apio', icono: '🥬' },
+  { nombre: 'Mostaza', icono: '🟡' },
+  { nombre: 'Sésamo', icono: '✨' },
+  { nombre: 'Sulfitos', icono: '🧪' },
+  { nombre: 'Altramuces', icono: '🌱' },
+  { nombre: 'Moluscos', icono: '🐚' },
+]
+---
+
+<Layout title='Nuestra carta - Licencia Gourmet'>
+  <main>
+    <h1 class="mb-8">Nuestra Carta</h1>
+
+    <div class='w-full flex flex-col items-center justify-center space-y-32'>
+      <section class='lg:w-3/4 xl:w-1/2'>
+        <h2>Alérgenos</h2>
+        <div class='alergenos flex flex-wrap justify-around gap-8'>
+          {alergenos.map(alergeno => (
+            <div class='alergeno flex items-center gap-4'>
+              <span>{alergeno.icono}</span>
+              <span>{alergeno.nombre}</span>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section>
+        <h2>Vinos</h2>
+        <div class='dishes'>
+          <Dish
+            title='Vino'
+            description='Vino con aroma de uva sacada con los pies'
+            img='vino.png'
+            price={4.99}
+          />
+
+          <Dish
+            title='Vino'
+            description='Vino con aroma de uva sacada con los pies'
+            img='vino.png'
+            price={4.99}
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Entrantes</h2>
+        <div class='dishes'>
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Ensaladas</h2>
+        <div class='dishes'>
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Platos infantiles</h2>
+        <div class='dishes'>
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Carnes</h2>
+        <div class='dishes'>
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Pescados</h2>
+        <div class='dishes'>
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Bebidas</h2>
+        <div class='dishes'>
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+        </div>
+      </section>
+
+      <section>
+        <h2>Sugerencias del día</h2>
+        <div class='dishes'>
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+
+          <Dish
+            title='Plato'
+            description='No sé que lleva este plato pero tiene pinta de estar de locos'
+            img='comida.png'
+            price={11.99}
+          />
+        </div>
+      </section>
+    </div>
+  </main>
+</Layout>
+
+<style>
+  section {
+    width: 100%;
+    padding: 0 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .dishes {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 4rem;
+  }
+
+  @media (min-width: 1024px) {
+    section {
+      width: 75%;
+    }
+
+    .dishes {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      grid-auto-flow: dense;
+    }
+  }
+</style>

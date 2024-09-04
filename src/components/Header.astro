@@ -1,0 +1,25 @@
+---
+import { Image } from 'astro:assets'
+import logoImg from '@/assets/images/logo.png'
+import HeaderNavMenu from '@/components/HeaderNavMenu.astro'
+import HeaderNavMenuMobile from '@/components/HeaderNavMenuMobile.astro'
+---
+
+<header class="w-full flex justify-between px-4 py-6 shadow-xl">
+  <a href='/'>
+    <Image width={200} src={logoImg} alt='Logo de Licencia Gourmet' />
+  </a>
+  <div class="flex items-center md:hidden">
+    <HeaderNavMenuMobile />
+  </div>
+  <div class="hidden md:flex md:items-center">
+    <HeaderNavMenu />
+  </div>
+</header>
+
+<style>
+  header {
+    background-color: #1a1a1a;
+    color: white;
+  }
+</style>

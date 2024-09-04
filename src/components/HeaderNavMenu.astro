@@ -1,0 +1,52 @@
+---
+const routes = [
+  {
+    name: 'Inicio',
+    url: '/'
+  },
+  {
+    name: 'Carta',
+    url: '/carta'
+  },
+  {
+    name: 'Reservas',
+    url: '/reservas'
+  },
+  {
+    name: 'Sobre nosotros',
+    url: '/sobre-nosotros'
+  },
+  {
+    name: 'Contacto',
+    url: '/contacto'
+  }
+]
+
+const pathname = Astro.url.pathname
+---
+
+<nav>
+  <ul class="h-full flex space-x-4 text-base font-normal items-center">
+    {routes.map((route) => (
+      <li>
+        <a class={pathname === route.url ? 'active' : ''} href={route.url}>{route.name}</a>
+      </li>
+    ))}
+  </ul>
+</nav>
+
+<style>
+  a {
+    transition: color 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  a:hover {
+    color: #A09754;
+  }
+
+  .active {
+    color: #A09754;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+  }
+</style>

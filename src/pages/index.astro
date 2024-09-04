@@ -1,0 +1,137 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import { Image } from 'astro:assets'
+import restaurantImage from '@/assets/images/restaurante.webp'
+import chefImg from '@/assets/images/chef.webp'
+import ButtonLink from '@/components/ButtonLink.astro'
+---
+
+<Layout title='Welcome to Astro.'>
+  <main class='py-8 flex flex-col space-y-16'>
+    <section>
+      <h1>Restaurante Licencia Gourmet</h1>
+      <p>
+        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Velit odio
+        esse culpa, explicabo nisi repellat voluptatum sit ex quibusdam
+        quisquam. Incidunt delectus suscipit qui soluta eligendi ullam animi,
+        labore quasi?
+      </p>
+    </section>
+
+    <Image src={restaurantImage} alt={'Imagen de fondo del restaurante'} />
+
+    <section>
+      <h2>Nuestra carta</h2>
+      <p>
+        A continuación nos gustaría presentarte nuestros mejores platos, hechos
+        con los mejores productos de nuestra tierra pero sobre todo con mucho
+        amor.
+      </p>
+
+      <ButtonLink href='/carta'> Ver la carta </ButtonLink>
+    </section>
+
+    <section id='section-chef' class="lg:flex lg:flex-col">
+      <Image src={chefImg} alt={'Imagen del chef'} />
+      <div class='flex flex-col space-y-8 p-4 items-center'>
+        <h2>Unas palabras del Chef</h2>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+          similique dicta. Explicabo obcaecati similique, sed reiciendis ad quos
+          perspiciatis debitis, saepe ducimus placeat accusamus error. Quos
+          atque voluptate libero asperiores.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem,
+          similique dicta. Explicabo obcaecati similique, sed reiciendis ad quos
+          perspiciatis debitis, saepe ducimus placeat accusamus error. Quos
+          atque voluptate libero asperiores.
+        </p>
+        <p>El Chef</p>
+
+        <ButtonLink href='/sobre-nosotros' reverseColors>
+          Conoce nuestra historia
+        </ButtonLink>
+      </div>
+    </section>
+
+    <section>
+      <h2>Reserva tu mesa</h2>
+      <p>
+        Disponemos de un sistema de gestión de reservas para que puedas reservar
+        una mesa sin que tengas que enviar el típico formulario o llamar y tener
+        que esperar a que contesten.
+      </p>
+      <ButtonLink href='/reservas'>Reservar mesa</ButtonLink>
+    </section>
+  </main>
+</Layout>
+
+<style>
+  .title-accent {
+    color: var(--background);
+  }
+
+  section {
+    width: 70%;
+    margin: 0 auto;
+    text-align: center;
+
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #section-chef {
+    width: 100%;
+    padding: 2rem 0;
+    flex-direction: column;
+    background-color: var(--primary);
+  }
+
+  #section-chef h2,
+  #section-chef p {
+    width: 90%;
+    max-width: 60ch;
+    color: var(--background);
+  }
+
+  #section-chef p {
+    text-align: left;
+  }
+
+  @media (width >= 850px) {
+    #section-chef {
+      padding: 0;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    #section-chef img {
+      width: 50%;
+    }
+
+    #section-chef div {
+      width: 50%;
+    }
+  }
+
+  @media (width >= 1536px) {
+    #section-chef {
+      padding: 4rem 0;
+      justify-content: center;
+    }
+
+    #section-chef img {
+      width: 30%;
+      aspect-ratio: 0.9;
+      object-fit: scale-down;
+    }
+
+    #section-chef div {
+      width: fit-content;
+    }
+  }
+</style>

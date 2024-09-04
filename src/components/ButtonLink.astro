@@ -1,0 +1,42 @@
+---
+import { colors } from '@/utils/colors'
+
+interface Props {
+  href: string
+  reverseColors?: boolean
+}
+
+const { href, reverseColors = false } = Astro.props
+
+const primary = reverseColors ? colors.background : colors.primary
+const background = reverseColors ? colors.primary : colors.background
+---
+
+<div class='button-link'>
+  <a href={href}>
+    <slot />
+  </a>
+</div>
+
+<style define:vars={{ primary, background }}>
+  .button-link {
+    width: fit-content;
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    text-decoration: none;
+
+    transition:
+      color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .button-link:hover {
+    background-color: var(--primary);
+    color: var(--background);
+  }
+
+  .button-link a {
+    padding: 0.5rem 2.5rem;
+    display: inline-block;
+  }
+</style>

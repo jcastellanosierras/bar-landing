@@ -1,0 +1,12 @@
+---
+import { Image } from 'astro:assets'
+import logoImg from '@/assets/images/logo.png'
+
+interface Props {
+  width?: number
+}
+
+const { width } = Astro.props
+---
+
+<Image width={width ?? 200} src={logoImg} alt='Logo de Licencia Gourmet' />
