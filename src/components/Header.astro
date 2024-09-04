@@ -3,6 +3,29 @@ import { Image } from 'astro:assets'
 import logoImg from '../assets/images/logo.webp'
 import HeaderNavMenu from '@/components/HeaderNavMenu.astro'
 import HeaderNavMenuMobile from '@/components/HeaderNavMenuMobile.astro'
+
+const routes = [
+  {
+    name: 'Inicio',
+    url: '/'
+  },
+  {
+    name: 'Carta',
+    url: '/carta'
+  },
+  {
+    name: 'Reservas',
+    url: '/reservas'
+  },
+  {
+    name: 'Sobre nosotros',
+    url: '/sobre-nosotros'
+  },
+  {
+    name: 'Contacto',
+    url: '/contacto'
+  }
+]
 ---
 
 <header class="w-full flex justify-between px-4 py-6 shadow-xl">
@@ -10,10 +33,10 @@ import HeaderNavMenuMobile from '@/components/HeaderNavMenuMobile.astro'
     <Image width={200} src={logoImg} alt='Logo de Licencia Gourmet' />
   </a>
   <div class="flex items-center md:hidden">
-    <HeaderNavMenuMobile />
+    <HeaderNavMenuMobile routes={routes} pathname={Astro.url.pathname} />
   </div>
   <div class="hidden md:flex md:items-center">
-    <HeaderNavMenu />
+    <HeaderNavMenu routes={routes} pathname={Astro.url.pathname} />
   </div>
 </header>
 

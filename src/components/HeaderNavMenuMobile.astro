@@ -3,30 +3,12 @@ import Menu from '@/icons/Menu.astro'
 import X from '@/icons/X.astro'
 import { colors } from '@/utils/colors'
 
-const routes = [
-  {
-    name: 'Inicio',
-    url: '/',
-  },
-  {
-    name: 'Carta',
-    url: '/carta',
-  },
-  {
-    name: 'Reservas',
-    url: '/reservas',
-  },
-  {
-    name: 'Sobre nosotros',
-    url: '/sobre-nosotros',
-  },
-  {
-    name: 'Contacto',
-    url: '/contacto',
-  },
-]
+interface Props {
+  routes: { name: string; url: string }[]
+  pathname: string
+}
 
-const pathname = Astro.url.pathname
+const { routes, pathname } = Astro.props
 ---
 
 <div id="menu-open" class="cursor-pointer transition-opacity hover:opacity-70">
@@ -40,7 +22,7 @@ const pathname = Astro.url.pathname
     <ul class="h-full flex flex-col justify-center space-y-4 text-4xl font-medium items-center">
       {routes.map((route) => (
         <li>
-          <a class={pathname === route.url ? 'active' : ''} href={route.url}>{route.name}</a>
+          <a data-astro-reload class='nav-link' href={route.url}>{route.name}</a>
         </li>
       ))}
     </ul>
@@ -92,6 +74,9 @@ const pathname = Astro.url.pathname
 </style>
 
 <script>
+  const pathname = window.location.pathname
+  const links = document.querySelectorAll('.nav-link')
+
   const menuOpen = document.getElementById('menu-open')
   const menuClose = document.getElementById('menu-close')
   const menuContainer = document.getElementById('menu-container')
@@ -107,5 +92,4 @@ const pathname = Astro.url.pathname
       document.body.style.overflow = 'auto'
     })
   }
-
 </script>

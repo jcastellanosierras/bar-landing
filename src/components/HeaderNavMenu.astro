@@ -1,35 +1,17 @@
 ---
-const routes = [
-  {
-    name: 'Inicio',
-    url: '/'
-  },
-  {
-    name: 'Carta',
-    url: '/carta'
-  },
-  {
-    name: 'Reservas',
-    url: '/reservas'
-  },
-  {
-    name: 'Sobre nosotros',
-    url: '/sobre-nosotros'
-  },
-  {
-    name: 'Contacto',
-    url: '/contacto'
-  }
-]
+interface Props {
+  routes: { name: string; url: string }[]
+  pathname: string
+}
 
-const pathname = Astro.url.pathname
+const { routes, pathname } = Astro.props
 ---
 
 <nav>
   <ul class="h-full flex space-x-4 text-base font-normal items-center">
     {routes.map((route) => (
       <li>
-        <a class={pathname === route.url ? 'active' : ''} href={route.url}>{route.name}</a>
+        <a data-content-reload class={pathname === route.url ? 'active' : ''} href={route.url}>{route.name}</a>
       </li>
     ))}
   </ul>
